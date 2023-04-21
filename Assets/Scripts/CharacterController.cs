@@ -19,6 +19,7 @@ public class CharacterController : MonoBehaviour
 
         // Move the character in the direction it is facing at a constant speed
         Vector3 newPosition = transform.position + new Vector3(direction.x, direction.y, 0f) * speed * Time.deltaTime;
+        //Vector3 newPosition = transform.position + new Vector3(direction.x, direction.y, 0f) * speed * Time.deltaTime;
         transform.position = newPosition;
     }
 }
