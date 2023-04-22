@@ -11,6 +11,7 @@ public class ClothingStore : MonoBehaviour
     private int selectedDressIndex = -1;
     private PlayerBalance playerBalance;
     private SpriteRenderer characterSpriteRenderer;
+    private Sprite baseSprite;
 
     private void Start()
     {
@@ -19,6 +20,9 @@ public class ClothingStore : MonoBehaviour
 
         // Get the SpriteRenderer component of the character
         characterSpriteRenderer = character.GetComponent<SpriteRenderer>();
+
+        // Set the base sprite to the character's default sprite
+        baseSprite = characterSpriteRenderer.sprite;
     }
 
     public void SelectDress(int index)
@@ -59,7 +63,7 @@ public class ClothingStore : MonoBehaviour
             playerBalance.Add(dressPrices[selectedDressIndex]);
 
             // Unequip the dress from the character
-            characterSpriteRenderer.sprite = null;
+            characterSpriteRenderer.sprite = baseSprite;
 
             // Reset the selected dress index
             selectedDressIndex = -1;
